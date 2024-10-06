@@ -4,7 +4,7 @@ node ('agent1') {
         checkout scm
     }
     stage('Build-and-Tag') {
-        app = docker.build("https://github.com/leonenkot/jenkins")
+        app = docker.build("leonenkot/jenkins")
     }
     stage('Pull-image-server') {
         docker.withRegistry('https://registry.hub.docker.com','dockerhub_creds'){
